@@ -8,6 +8,7 @@
 
 import Cocoa
 import AppKit
+import os
 
 class ViewController: NSViewController {
     
@@ -60,5 +61,20 @@ extension NSSpeechSynthesizer {
         let speakableText = text
             .replacingOccurrences(of: "\\bidk\\b", with: "I D K", options: [.regularExpression, .caseInsensitive])
         startSpeaking(speakableText)
+    }
+}
+
+class IgnoreShiftTextView: NSTextView {
+    var isShifting = false
+    override func flagsChanged(with event: NSEvent) {
+        isShifting = event.modifierFlags.contains(.shift)
+        os_log("set isShifting %", isShifting ? "true" : "false")
+        super.flagsChanged(with: event)
+    }
+    override func didChangeText() {
+        if !isShifting {
+            os_log("callidng super.didChangeText")
+            super.didChangeText()
+        }
     }
 }

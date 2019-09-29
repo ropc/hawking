@@ -727,7 +727,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="324"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" findStyle="bar" spellingCorrection="YES" smartInsertDelete="YES" id="On6-q4-zX6">
+                                                <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" findStyle="bar" spellingCorrection="YES" smartInsertDelete="YES" id="On6-q4-zX6" customClass="IgnoreShiftTextView" customModule="hawking" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="324"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
