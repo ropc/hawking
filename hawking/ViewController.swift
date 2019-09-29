@@ -17,12 +17,24 @@ class ViewController: NSViewController {
     let speechSynth = NSSpeechSynthesizer()
     var lastLength = 0
 
+    var fontSize: CGFloat = 36
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         realHistoryView.delegate = self
-        realHistoryView.font = .systemFont(ofSize: 36)
+        realHistoryView.font = .systemFont(ofSize: fontSize)
+    }
+
+    @IBAction func decreaseFontSize(_ sender: NSButton) {
+        fontSize = max(fontSize - 4, 2)
+        realHistoryView.font = .systemFont(ofSize: fontSize)
+    }
+
+    @IBAction func increaseFontSize(_ sender: NSButton) {
+        fontSize += 4
+        realHistoryView.font = .systemFont(ofSize: fontSize)
     }
 }
 
@@ -60,6 +72,9 @@ extension NSSpeechSynthesizer {
     func say(text: String) {
         let speakableText = text
             .replacingOccurrences(of: "\\bidk\\b", with: "I D K", options: [.regularExpression, .caseInsensitive])
+            .replacingOccurrences(of: "\\breddit\\b", with: "red itt", options: [.regularExpression, .caseInsensitive])
+            .replacingOccurrences(of: "\\bminecraft\\b", with: "mine craft", options: [.regularExpression, .caseInsensitive])
+
         startSpeaking(speakableText)
     }
 }

@@ -707,20 +707,55 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="hawking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="324"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="442"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q1V-Dz-olY">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="324"/>
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="442"/>
                                 <subviews>
-                                    <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="M7M-xG-a31">
-                                        <rect key="frame" x="-2" y="296" width="157" height="28"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Text to Speech" id="NYX-Sy-qnh">
-                                            <font key="font" metaFont="system" size="24"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
+                                    <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ccq-bb-lij">
+                                        <rect key="frame" x="121" y="332" width="239" height="110"/>
+                                        <subviews>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="x6D-Ye-dmO">
+                                                <rect key="frame" x="-2" y="47" width="61" height="16"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Font Size" id="xCu-my-KwN">
+                                                    <font key="font" usesAppearanceFont="YES"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zJ2-RN-8Y7">
+                                                <rect key="frame" x="59" y="38" width="98" height="32"/>
+                                                <buttonCell key="cell" type="push" title="Decrease" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qZk-2c-N3Y">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="decreaseFontSize:" target="XfG-lQ-9wD" id="HqC-5Y-z8J"/>
+                                                </connections>
+                                            </button>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Sdh-Gz-qTG">
+                                                <rect key="frame" x="153" y="38" width="92" height="32"/>
+                                                <buttonCell key="cell" type="push" title="Increase" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gge-jd-BtV">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="increaseFontSize:" target="XfG-lQ-9wD" id="DLY-I8-g72"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
                                     <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Pj-v2-q4K">
                                         <rect key="frame" x="120" y="0.0" width="240" height="324"/>
                                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="ebM-rs-CIk">
